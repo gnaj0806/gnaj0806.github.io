@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhonny Ocariz - Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .skill-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #3b82f6;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-900/95 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-xl font-bold text-blue-400">Jhonny Ocariz</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-white">Work Experiences</a>
+                    <a href="#education" class="nav-link text-gray-300 hover:text-white">Education</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#about" class="block py-2 text-gray-300 hover:text-white">About</a>
+                <a href="#skills" class="block py-2 text-gray-300 hover:text-white">Skills</a>
+                <a href="#projects" class="block py-2 text-gray-300 hover:text-white">Work Experiences</a>
+                <a href="#education" class="block py-2 text-gray-300 hover:text-white">Education</a>
+                <a href="#contact" class="block py-2 text-gray-300 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="mb-8">
+                <div class="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
+                    <div class="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1H5C3.89 1 3 1.89 3 3V19C3 20.1 3.9 21 5 21H11V19H5V3H13V9H21ZM14 15V17H22V15H14ZM14 19V21H22V19H14ZM14 11V13H22V11H14Z"/>
+                        </svg>
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                        Jhonny Ocariz
+                    </span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8">
+                    Application Developer • IT Instructor • Technical Support Specialist
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#projects" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+                        View My Experience
+                    </a>
+                    <a href="#contact" class="border border-gray-600 hover:border-gray-500 px-8 py-3 rounded-lg font-semibold transition-colors">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-gray-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center">
+                    <h3 class="text-2xl font-semibold mb-6 text-blue-400">Versatile IT Professional</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        I am a versatile IT professional with a range of experience as an IT instructor, freelance technician, 
+                        service desk analyst, UI/UX designer, and application developer. I am a keen observer and a fast learner, 
+                        which allows me to quickly adapt to new technologies and provide innovative, user-focused solutions.
+                    </p>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        I excel at providing efficient technical support and education, combining my technical expertise with 
+                        strong communication skills to bridge the gap between complex technology and practical solutions. 
+                        My diverse background enables me to approach problems from multiple perspectives and deliver comprehensive solutions.
+                    </p>
+                    <div class="flex flex-wrap gap-3 justify-center">
+                        <span class="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm">Fast Learner</span>
+                        <span class="bg-purple-600/20 text-purple-400 px-3 py-1 rounded-full text-sm">Keen Observer</span>
+                        <span class="bg-green-600/20 text-green-400 px-3 py-1 rounded-full text-sm">User-Focused</span>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Competencies Section -->
+    <section id="skills" class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Core Competencies</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    A comprehensive skill set built through years of hands-on experience across multiple IT domains
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Programming Languages -->
+                <div class="bg-gray-800 rounded-xl p-8 card-hover">
+                    <div class="skill-icon w-16 h-16 bg-blue-600/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9.4 16.6L4.8 12L9.4 7.4L8 6L2 12L8 18L9.4 16.6ZM14.6 16.6L19.2 12L14.6 7.4L16 6L22 12L16 18L14.6 16.6Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-blue-400">Programming Languages</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                            C/C++
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                            Java
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                            .NET & C#
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                            SQL
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                            HTML, CSS, JavaScript
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                            PHP & MVC
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Platforms & Tools -->
+                <div class="bg-gray-800 rounded-xl p-8 card-hover">
+                    <div class="skill-icon w-16 h-16 bg-purple-600/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 6H2V20C2 21.1 2.9 22 4 22H18V20H4V6ZM20 2H8C6.9 2 6 2.9 6 4V16C6 17.1 6.9 18 8 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H8V4H20V16Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-purple-400">Platforms & Development</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                            Visual Studio (MVC5)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                            Xamarin Forms
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                            Android Studio (Kotlin)
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                            Salesforce
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                            Arduino & Raspberry Pi
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                            PLC Programming
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Technical Support -->
+                <div class="bg-gray-800 rounded-xl p-8 card-hover">
+                    <div class="skill-icon w-16 h-16 bg-green-600/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-green-400">Technical Support</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                            Hardware/Software Troubleshooting
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                            Remote Support Tools
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                            Active Directory
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                            ServiceNow & MBAM
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                            Printer Support
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                            Mobile Device Support
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Design & Remote Tools -->
+                <div class="bg-gray-800 rounded-xl p-8 card-hover">
+                    <div class="skill-icon w-16 h-16 bg-orange-600/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-orange-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-orange-400">UI/UX Design</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                            Adobe Photoshop
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                            Canva Design
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                            GIMP
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                            User Interface Design
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                            User Experience Design
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                            Visual Design
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Remote Support Tools -->
+                <div class="bg-gray-800 rounded-xl p-8 card-hover">
+                    <div class="skill-icon w-16 h-16 bg-teal-600/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-teal-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12S7.59 4 12 4 20 7.59 20 12 16.41 20 12 20ZM15.88 8.29L10 14.17L8.12 12.29C7.73 11.9 7.1 11.9 6.71 12.29S6.32 13.39 6.71 13.78L9.3 16.37C9.69 16.76 10.32 16.76 10.71 16.37L17.3 9.78C17.69 9.39 17.69 8.76 17.3 8.37S16.27 7.9 15.88 8.29Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-teal-400">Remote Support Tools</h3>
+                    <ul class="text-gray-300 space-y-2">
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                            TeamViewer
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                            AnyDesk
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                            LogMeIn
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                            Chrome Remote Desktop
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                            Remote Troubleshooting
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-2 h-2 bg-teal-500 rounded-full mr-3"></span>
+                            Virtual Support
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects & Experience Section -->
+    <section id="projects" class="py-20 bg-gray-800">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Work Experience</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Professional work experience showcasing expertise across application development, technical support, and IT instruction
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Project 1: Application Development -->
+                <div class="bg-gray-900 rounded-xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7L12 12L22 7L12 2ZM2 17L12 22L22 17M2 12L12 17L22 12"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-blue-400">Application Development</h3>
+                        <div class="mb-3">
+                            <p class="text-sm text-gray-400 mb-1">Role: .NET Developer</p>
+                            <p class="text-sm text-gray-400 mb-1">Company: Syntel Infotech | Atos Syntel</p>
+                            <p class="text-sm text-gray-400 mb-3">Duration: March 2022 - October 2022</p>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Provided comprehensive support for development teams, collaborating on application modules 
+                            to improve user data management and system performance. Worked with .NET technologies to 
+                            deliver efficient solutions and optimize existing applications.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-600/20 text-blue-400 px-2 py-1 rounded text-sm">.NET</span>
+                            <span class="bg-green-600/20 text-green-400 px-2 py-1 rounded text-sm">C#</span>
+                            <span class="bg-purple-600/20 text-purple-400 px-2 py-1 rounded text-sm">MVC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: IT Instruction -->
+                <div class="bg-gray-900 rounded-xl overflow-hidden card-hover">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM17 12H15V15H12V17H15C16.1 17 17 16.1 17 15V12ZM12 7H15C16.1 7 17 7.9 17 9V12H15V9H12V7ZM9 12H7V9C7 7.9 7.9 7 9 7H12V9H9V12ZM7 15C7 16.1 7.9 17 9 17H12V15H9V12H7V15Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-400">IT Instruction & Curriculum Management</h3>
+                        <div class="mb-3">
+                            <p class="text-sm text-gray-400 mb-1">Role: IT Instructor I</p>
+                            <p class="text-sm text-gray-400 mb-1">Company: Cavite State University - Trece Martires City Campus</p>
+                            <p class="text-sm text-gray-400 mb-3">Duration: September 2023 - February 2025</p>
+                        </div>
+                        <p class="text-gray-300 mb-4">
+                            Delivered comprehensive IT education while staying current with latest technology trends. 
+                            Managed student assessments, maintained classroom IT infrastructure, and ensured optimal 
+                            learning environments through regular hardware and software updates.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-600/20 text-purple-400 px-2 py-1 rounded text-sm">Curriculum Design</span>
+                            <span class="bg-orange-600/20 text-orange-400 px-2 py-1 rounded text-sm">Student Assessment</span>
+                            <span class="bg-blue-600/20 text-blue-400 px-2 py-1 rounded text-sm">IT Maintenance</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Technical Support -->
+                <div class="bg-gray-900 rounded-xl overflow-hidden card-hover lg:col-span-2">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
+                        <svg class="w-16 h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"/>
+                        </svg>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-green-400">Troubleshooting and Technical Support</h3>
+                        <div class="mb-3">
+                            <p class="text-sm text-gray-400 mb-1">Role: Freelance Technician</p>
+                            <p class="text-sm text-gray-400 mb-3">Duration: 2017 - Present</p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-semibold text-green-300 mb-3">Core Services:</h4>
+                                <ul class="text-gray-300 space-y-2">
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                                        Laptop & Desktop Troubleshooting
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                                        Printer Diagnostics & Repair
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                                        Mobile Phone Support
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                                        Hardware & Software Solutions
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-green-300 mb-3">Case Study Example:</h4>
+                                <p class="text-gray-300 text-sm">
+                                    Successfully diagnosed and resolved recurring Blue Screen of Death (BSOD) errors 
+                                    on client laptops by identifying faulty RAM modules and implementing hardware 
+                                    replacements, restoring systems to full functionality with improved stability.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="bg-green-600/20 text-green-400 px-2 py-1 rounded text-sm">Hardware Repair</span>
+                            <span class="bg-red-600/20 text-red-400 px-2 py-1 rounded text-sm">Software Troubleshooting</span>
+                            <span class="bg-yellow-600/20 text-yellow-400 px-2 py-1 rounded text-sm">System Diagnostics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Education</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Academic foundation in Information Technology and Electronics Engineering
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- IT Degree -->
+                <div class="bg-gray-800 rounded-xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-blue-600/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-blue-400">Bachelor of Science in Information Technology</h3>
+                    <div class="text-center mb-4">
+                        <p class="text-gray-300 font-semibold">Cavite State University</p>
+                        <p class="text-gray-400">2017 - 2020</p>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Comprehensive program covering software development, database management, 
+                        network administration, and IT project management.
+                    </p>
+                </div>
+
+                <!-- Engineering Degree -->
+                <div class="bg-gray-800 rounded-xl p-8 card-hover">
+                    <div class="w-16 h-16 bg-purple-600/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                        <svg class="w-8 h-8 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 3L1 9L12 15L21 10.09V17H23V9M5 13.18V17.18L12 21L19 17.18V13.18L12 17L5 13.18Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-purple-400">Bachelor of Science in Electronics and Communication Engineering</h3>
+                    <div class="text-center mb-4">
+                        <p class="text-gray-300 font-semibold">Polytechnic University of the Philippines</p>
+                        <p class="text-gray-400">2013 - 2017</p>
+                    </div>
+                    <p class="text-gray-300 text-center">
+                        Strong foundation in electronics, communication systems, circuit design, 
+                        and embedded systems programming.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="mb-16">
+                <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mb-6"></div>
+                <p class="text-gray-400 text-lg">
+                    Ready to discuss your next project or explore collaboration opportunities?
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-900 rounded-xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-blue-600/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Email</h3>
+                    <p class="text-gray-400 text-sm">ocariz.jhonny.depalubos@gmail.com</p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-green-600/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79C8.06 13.62 10.38 15.94 13.21 17.38L15.41 15.18C15.69 14.9 16.08 14.82 16.43 14.93C17.55 15.3 18.75 15.5 20 15.5C20.55 15.5 21 15.95 21 16.5V20C21 20.55 20.55 21 20 21C10.61 21 3 13.39 3 4C3 3.45 3.45 3 4 3H7.5C8.05 3 8.5 3.45 8.5 4C8.5 5.25 8.7 6.45 9.07 7.57C9.18 7.92 9.1 8.31 8.82 8.59L6.62 10.79Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Phone</h3>
+                    <p class="text-gray-400">+639272880592</p>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl p-6 card-hover">
+                    <div class="w-12 h-12 bg-purple-600/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M16.5 3C19.54 3 22 5.46 22 8.5C22 12.27 16.5 21 16.5 21S11 12.27 11 8.5C11 5.46 13.46 3 16.5 3ZM16.5 11.5C18.16 11.5 19.5 10.16 19.5 8.5S18.16 5.5 16.5 5.5 13.5 6.84 13.5 8.5 14.84 11.5 16.5 11.5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold mb-2">Location</h3>
+                    <p class="text-gray-400 text-sm">242 Mariposa St., Sabang, Naic, Cavite</p>
+                </div>
+            </div>
+
+            <div class="bg-gray-900 rounded-xl p-8">
+                <h3 class="text-2xl font-semibold mb-6">Send a Message</h3>
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors">
+                        <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors">
+                    </div>
+                    <input type="text" placeholder="Subject" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors">
+                    <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:border-blue-500 focus:outline-none transition-colors resize-none"></textarea>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-lg font-semibold transition-colors">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-700 py-8">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                © 2024 Jhonny Ocariz. Built with passion for technology and innovation.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Form submission (demo functionality)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! This is a demo form - in a real implementation, this would send your message to Jhonny.');
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-gray-900');
+                nav.classList.remove('bg-gray-900/95');
+            } else {
+                nav.classList.remove('bg-gray-900');
+                nav.classList.add('bg-gray-900/95');
+            }
+        });
+
+
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9806ca04e3690574',t:'MTc1ODA5MzA4Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
